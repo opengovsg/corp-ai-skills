@@ -26,7 +26,7 @@ Only judgement lives here. Mechanical work sits in GitHub Actions, which *can* f
 
 ## Setup on claude.ai
 
-- Trigger: GitHub → Pull request opened, repo `opengovsg/corp-ai`
+- Trigger: GitHub → Pull request opened, repo `opengovsg/corp-ai-skills`
 - Connector: GitHub (needs PR read, file read, and comment)
 - No secrets in the environment box
 - Prompt: paste `PROMPT.md` verbatim

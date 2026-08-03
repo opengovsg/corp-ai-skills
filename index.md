@@ -6,4 +6,4 @@ Every skill in this repo, in one place. The `skills-intake` Action regenerates t
 
 | Name | Purpose | Owner | Status |
 |---|---|---|---|
-| [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai), then upload one. | cs-keith | Active |
+| [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. | cs-keith | Active |
