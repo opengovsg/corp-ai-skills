@@ -1,0 +1,21 @@
+name: Skills check
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - 'nudge.md'
+
+# Read-only: this runs on PRs from forks, where a write token would be both
+# unavailable and unwise. Repairs happen after merge, in skills-intake.yml.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refuse secrets, report nudge state
+        run: python3 .github/scripts/skills_intake.py --check
