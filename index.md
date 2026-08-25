@@ -6,4 +6,6 @@ Every skill in this repo, in one place. The `skills-intake` Action regenerates t
 
 | Name | Purpose | Owner | Status |
 |---|---|---|---|
+| [draft-candidate-feedback](skills/draft-candidate-feedback/) | Draft concise, candidate-facing interview feedback for rejected candidates from pasted evaluation notes and evaluation sync notes. | cs-keith | Active |
 | [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. | cs-keith | Active |
+| [slide-deck-builder](skills/slide-deck-builder/) | Create or edit self-contained HTML slide decks for presentations, pitches, workshops and teaching sessions. | cs-keith | Active |

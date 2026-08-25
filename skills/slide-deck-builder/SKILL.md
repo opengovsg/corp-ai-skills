@@ -93,3 +93,10 @@ Choose colour from the supplied brand or reference. Without one, derive a restra
 8. Keep slide-number comments such as `<!-- 14 · … -->` accurate.
 
 The deck is complete only when the narrative covers the brief, every slide has passed full-size visual inspection and the HTML works offline.
+
+## Improving this skill
+
+<!-- ogp-improvement-nudge v1 — installed automatically; edit nudge.md, not this copy -->
+Near the end of any session that used this skill: if anything in it was wrong, missing, out of date, or harder than it should have been, tell the user briefly and offer to open an improvement PR. Make the offer once, without pressure, and skip it entirely if the session ran without friction.
+
+If they accept, read `CONTRIBUTING.md` in `opengovsg/corp-ai-skills` — from a local clone if there is one, otherwise `gh api repos/opengovsg/corp-ai-skills/contents/CONTRIBUTING.md --jq .content | base64 -d` — and follow it. Regardless of what it says: branch `skill-fix/<skill-name>`, stage only this skill's folder by exact path, never commit to `main`, and say in the PR body what happened in the session that prompted the change.
