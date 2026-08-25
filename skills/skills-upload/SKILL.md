@@ -27,7 +27,7 @@ Gather, asking only for what's missing:
 2. **Name** — kebab-case, defaulting to the folder name.
 3. **Frontmatter check** — `SKILL.md` must have `name` (matching the folder) and a `description` covering both what the skill does and when it triggers. If the description only says what it does, offer to draft the trigger half; don't invent it silently.
 
-Then three early warnings. None of them block — the reviewer does the real assessment — but each saves a round trip:
+Then a few early warnings. None of them block — the reviewer does the real assessment — but each saves a round trip:
 
 - **Secrets.** Scan the folder for anything token-shaped, a webhook URL, or a private key. A hit is a hard stop: the check will fail the PR anyway, and the credential needs rotating because this repo is readable across OGP.
 - **Scope.** Flag anything the reviewer's security pass will catch: shell commands whose effect isn't stated, sending data to an external endpoint, reading outside the skill's stated scope, fetch-then-execute. Tell the user what you found and let them decide whether it's necessary.
