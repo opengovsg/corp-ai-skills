@@ -1,6 +1,6 @@
 # GCWC deck theme
 
-Use this visual system for Getting Comfy with Claude decks. Preserve continuity with the learning hub and latest GCWC deck; do not introduce a new palette or template unless Keith asks.
+Use this visual system for Getting Comfy with Claude decks. Preserve continuity with the learning hub and latest GCWC deck; do not introduce a new palette or template unless the GCWC programme owner approves the change.
 
 ## Palette
 
