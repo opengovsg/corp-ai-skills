@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OGP theme test deck</title>
+  <style>
+    :root {
+      --ogp-blue-50:#F7F9FE; --ogp-blue-100:#E1EBFD; --ogp-blue-200:#ACC7FA;
+      --ogp-blue-500:#276EF1; --ogp-blue-600:#0D4FCA; --ogp-blue-800:#093890;
+      --ogp-dark:#1D1D1D; --ogp-grey-100:#E9E9E9; --ogp-grey-500:#686868; --ogp-grey-600:#535353;
+      --ogp-white:#FFFFFF;
+    }
+    * { box-sizing:border-box; }
+    html, body { width:100%; height:100%; margin:0; overflow:hidden; background:#111; }
+    body { font-family:Inter,"Helvetica Neue",Arial,sans-serif; color:var(--ogp-dark); -webkit-font-smoothing:antialiased; }
+    #stage {
+      position:absolute; left:50%; top:50%; width:1280px; height:720px;
+      transform-origin:center center; background:var(--ogp-white); overflow:hidden;
+    }
+    .slide {
+      position:absolute; inset:0; padding:52px 80px 48px; background:var(--ogp-white);
+      opacity:0; pointer-events:none; transition:opacity .18s ease;
+    }
+    .slide.active { opacity:1; pointer-events:auto; }
+    .title-slide { background:var(--ogp-blue-500); color:var(--ogp-white); }
+    .logo { position:absolute; left:80px; top:46px; width:150px; height:auto; }
+    .title-slide .logo { width:220px; }
+    .closing .logo { width:210px; }
+    .slide-no {
+      position:absolute; right:80px; bottom:34px; font-size:18px; font-weight:700; color:var(--ogp-grey-500);
+    }
+    .title-slide .slide-no { color:var(--ogp-white); }
+    h1,h2,h3,p { margin:0; }
+    h1 { max-width:1040px; font-size:82px; line-height:.98; letter-spacing:-3.1px; font-weight:780; }
+    h2 { max-width:1040px; margin-top:105px; font-size:58px; line-height:1.04; letter-spacing:-2px; font-weight:780; }
+    .title-slide h1 { margin-top:198px; }
+    .subtitle { margin-top:28px; font-size:27px; line-height:1.25; max-width:760px; color:rgba(255,255,255,.9); }
+    .eyebrow {
+      margin-top:118px; color:var(--ogp-blue-600); font-size:20px; font-weight:800;
+      letter-spacing:1.2px; text-transform:uppercase;
+    }
+    .section h2 { margin-top:16px; font-size:72px; max-width:900px; }
+    .section .hint { margin-top:28px; max-width:620px; font-size:26px; line-height:1.35; color:var(--ogp-grey-600); }
+    .compare { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:48px; }
+    .panel { min-height:310px; padding:36px 38px; background:var(--ogp-blue-50); border-top:8px solid var(--ogp-blue-200); }
+    .panel.primary { background:var(--ogp-blue-100); border-color:var(--ogp-blue-500); }
+    .panel .token { color:var(--ogp-blue-600); font-size:19px; font-weight:800; letter-spacing:1px; }
+    .panel h3 { margin:28px 0 14px; font-size:36px; line-height:1.05; }
+    .panel p { font-size:25px; line-height:1.3; color:#454545; max-width:430px; }
+    .flow-slide h2 { font-size:54px; max-width:1000px; }
+    .flow { display:grid; grid-template-columns:1fr 86px 1fr 86px 1fr; align-items:center; margin-top:72px; }
+    .step { min-height:242px; padding:30px; border:2px solid var(--ogp-grey-100); background:var(--ogp-white); }
+    .step b { display:block; color:var(--ogp-blue-500); font-size:54px; line-height:1; }
+    .step h3 { margin:24px 0 12px; font-size:31px; }
+    .step p { font-size:22px; line-height:1.28; color:#4A4A4A; }
+    .arrow { text-align:center; color:var(--ogp-blue-500); font-size:48px; font-weight:700; }
+    .stat-slide .stat { margin-top:86px; color:var(--ogp-blue-500); font-size:118px; font-weight:800; letter-spacing:-4px; line-height:.9; }
+    .stat-slide .label { margin-top:22px; max-width:720px; font-size:28px; line-height:1.3; color:var(--ogp-grey-600); }
+    .closing { background:var(--ogp-white); }
+    .closing h2 { margin-top:220px; max-width:1040px; font-size:72px; }
+    .closing .rule { width:120px; height:10px; margin-top:44px; background:var(--ogp-blue-500); }
+    @media (prefers-reduced-motion:reduce) { .slide { transition:none; } }
+  </style>
+</head>
+<body>
+  <main id="stage" aria-live="polite">
+    <!-- 1 · Title -->
+    <section class="slide title-slide active" aria-label="Slide 1">
+      <img class="logo" src="logo-hori-white.svg" alt="Open Government Products">
+      <h1>Clear ideas.<br>Built for action.</h1>
+      <p class="subtitle">A compact test of the OGP presentation system.</p>
+      <span class="slide-no">01</span>
+    </section>
+
+    <!-- 2 · Hierarchy -->
+    <section class="slide" aria-label="Slide 2">
+      <img class="logo" src="logo-hori-default.svg" alt="Open Government Products">
+      <h2>The theme makes hierarchy obvious</h2>
+      <div class="compare">
+        <article class="panel">
+          <span class="token">QUIET CONTEXT</span>
+          <h3>Use space first</h3>
+          <p>White surfaces keep the message calm, legible and projector-safe.</p>
+        </article>
+        <article class="panel primary">
+          <span class="token">STRONG SIGNAL</span>
+          <h3>Use blue with intent</h3>
+          <p>OGP Blue marks structure, emphasis and the next thing to notice.</p>
+        </article>
+      </div>
+      <span class="slide-no">02</span>
+    </section>
+
+    <!-- 3 · Section divider -->
+    <section class="slide section" aria-label="Slide 3">
+      <img class="logo" src="logo-hori-default.svg" alt="Open Government Products">
+      <p class="eyebrow">Template family</p>
+      <h2>Title. Content. Close.</h2>
+      <p class="hint">One lock-up, one palette, four layouts that stay out of the way.</p>
+      <span class="slide-no">03</span>
+    </section>
+
+    <!-- 4 · Flow -->
+    <section class="slide flow-slide" aria-label="Slide 4">
+      <img class="logo" src="logo-hori-default.svg" alt="Open Government Products">
+      <h2>One simple rhythm carries the story</h2>
+      <div class="flow">
+        <article class="step"><b>1</b><h3>Frame</h3><p>State the point in plain language.</p></article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step"><b>2</b><h3>Show</h3><p>Use one visual treatment to make it concrete.</p></article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="step"><b>3</b><h3>Resolve</h3><p>End with the action or takeaway.</p></article>
+      </div>
+      <span class="slide-no">04</span>
+    </section>
+
+    <!-- 5 · Evidence -->
+    <section class="slide stat-slide" aria-label="Slide 5">
+      <img class="logo" src="logo-hori-default.svg" alt="Open Government Products">
+      <h2>The stage is fixed so composition holds</h2>
+      <p class="stat">16:9</p>
+      <p class="label">1280 × 720, official lock-ups, one shared palette.</p>
+      <span class="slide-no">05</span>
+    </section>
+
+    <!-- 6 · Closing -->
+    <section class="slide closing" aria-label="Slide 6">
+      <img class="logo" src="logo-hori-default.svg" alt="Open Government Products">
+      <h2>The system stays out of the way — so the idea can lead.</h2>
+      <div class="rule"></div>
+      <span class="slide-no">06</span>
+    </section>
+  </main>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')], stage=document.querySelector('#stage');
+    let index=Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.slice(1),10)||1)-1));
+    function scale(){const s=Math.min(innerWidth/1280,innerHeight/720);stage.style.transform=`translate(-50%,-50%) scale(${s})`;}
+    function show(next){
+      index=(next+slides.length)%slides.length;
+      slides.forEach((s,i)=>s.classList.toggle('active',i===index));
+      history.replaceState(null,'',`#${index+1}`);
+    }
+    addEventListener('resize',scale);
+    addEventListener('hashchange',()=>show(Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.slice(1),10)||1)-1))));
+    addEventListener('keydown',e=>{
+      if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); show(index+1); }
+      if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)) show(index-1);
+      if(e.key==='Home') show(0);
+      if(e.key==='End') show(slides.length-1);
+    });
+    addEventListener('click',e=>{ if(e.clientX>innerWidth/2) show(index+1); else show(index-1); });
+    let x=0;
+    addEventListener('touchstart',e=>x=e.changedTouches[0].clientX,{passive:true});
+    addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x; if(Math.abs(d)>40) show(index+(d<0?1:-1));},{passive:true});
+    scale(); show(index);
+  </script>
+</body>
+</html>
