@@ -8,7 +8,7 @@ on:
       - 'nudge.md'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: skills-intake
@@ -18,11 +18,19 @@ jobs:
   intake:
     runs-on: ubuntu-latest
     steps:
+      # Pushes to a protected main, so this needs an admin-owned PAT
+      # (INTAKE_PUSH_TOKEN) rather than the default GITHUB_TOKEN, which
+      # branch protection blocks. Scope: fine-grained, this repo only,
+      # Contents read/write, no Administration or Secrets. See CLAUDE.md
+      # "Changes to the machinery" for the owner and rotation date.
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.INTAKE_PUSH_TOKEN }}
 
       # Installs the nudge and syncs index.md, then commits only if content
-      # actually changed. A GITHUB_TOKEN push does not trigger workflows, so
-      # this cannot loop.
+      # actually changed. That idempotency is what stops this from looping —
+      # a PAT push (unlike GITHUB_TOKEN) does trigger this workflow again,
+      # but the second run finds nothing left to change and pushes nothing.
       - name: Install nudge, sync index
         env:
           MERGE_AUTHOR: ${{ github.event.head_commit.author.username }}
