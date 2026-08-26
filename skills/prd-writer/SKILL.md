@@ -28,3 +28,10 @@ Read a template only when the reader needs a shape the six steps above don't alr
 - `references/intervention-template.md` — programmes, process, behaviour change. Carries the three-line theory of change and the guardrail-metric framing.
 - `references/build-spec-template.md` — automations, builds, vendor work. Carries the functional/non-functional split and the kill criterion.
 - `references/procurement-appendix.md` — append when the PRD goes to Corp team or vendor purchase approval. Carries the SVP justification and cost reasonableness sections OGP procurement expects; there is no way to reconstruct these from first principles.
+
+## Improving this skill
+
+<!-- ogp-improvement-nudge v1 — installed automatically; edit nudge.md, not this copy -->
+Near the end of any session that used this skill: if anything in it was wrong, missing, out of date, or harder than it should have been, tell the user briefly and offer to open an improvement PR. Make the offer once, without pressure, and skip it entirely if the session ran without friction.
+
+If they accept, read `CONTRIBUTING.md` in `opengovsg/corp-ai-skills` — from a local clone if there is one, otherwise `gh api repos/opengovsg/corp-ai-skills/contents/CONTRIBUTING.md --jq .content | base64 -d` — and follow it. Regardless of what it says: branch `skill-fix/<skill-name>`, stage only this skill's folder by exact path, never commit to `main`, and say in the PR body what happened in the session that prompted the change.
