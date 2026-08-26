@@ -19,7 +19,7 @@ A mini-PRD makes work legible: why it matters, what change is proposed, why that
 
 5. **Pressure-test.** Challenge the _because_ clause and whether the chosen evidence tracks the outcome rather than activity. Revise until the causal claim survives the challenge or its weakness is explicit.
 
-6. **Deliver.** Save where the user requested; otherwise use `workshop/<project>/prd.md` in KC-2. The mini-PRD is complete when a reader can explain why the work exists, how the intervention is expected to cause the outcome, and what evidence would change the decision.
+6. **Deliver.** Save where the user requested; otherwise write `prd.md` in the current working directory. The mini-PRD is complete when a reader can explain why the work exists, how the intervention is expected to cause the outcome, and what evidence would change the decision.
 
 ## Shapes, if one helps
 
