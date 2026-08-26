@@ -3,13 +3,12 @@
 Two modes, one script:
 
   --check   Read-only. Refuse secrets, report a missing or stale nudge.
-            Runs on pull requests, including from forks.
-  (default) Repair in place: install the nudge, sync index.md, commit.
+            Runs on pull requests.
+  (default) Repair in place: install the nudge, sync skill indexes, commit.
             Runs on push to main, where write access always exists.
 
-The split exists because this repo is org-visible, so most contributions
-arrive from forks whose branches GITHUB_TOKEN cannot write to. Installing
-after merge works identically for forks and direct branches.
+The split keeps pull-request branches read-only to the intake machinery.
+Generated writes happen only after a human merges the change into main.
 
 The nudge is installed rather than merely demanded, so a contributor who has
 never heard of it still ships a skill that carries it. That is what makes the
@@ -36,6 +35,7 @@ from pathlib import Path
 SKILLS = Path("skills")
 NUDGE_SOURCE = Path("nudge.md")
 INDEX = Path("index.md")
+README = Path("README.md")
 
 MARKER = "ogp-improvement-nudge"
 
@@ -182,6 +182,33 @@ def rebuild_index(author: str) -> bool:
     return True
 
 
+def rebuild_readme_index() -> bool:
+    """Regenerate the public skill list in README.md from disk."""
+    text = README.read_text(encoding="utf-8")
+    match = re.search(
+        r"(<!-- skills-index:start -->\n)(.*?)(\n<!-- skills-index:end -->)",
+        text,
+        re.DOTALL,
+    )
+    if not match:
+        print("README.md: no skills index markers in the expected shape — skipping")
+        return False
+
+    rows = ["| Skill | What it does |", "|---|---|"]
+    for skill_md in sorted(SKILLS.glob("*/SKILL.md")):
+        name = skill_md.parent.name
+        fields = frontmatter(skill_md.read_text(encoding="utf-8"))
+        rows.append(f"| [{name}](skills/{name}/) | {purpose_of(fields)} |")
+
+    header, _, tail = match.groups()
+    rebuilt = header + "\n".join(rows) + tail
+    updated = text[: match.start()] + rebuilt + text[match.end():]
+    if updated == text:
+        return False
+    README.write_text(updated, encoding="utf-8")
+    return True
+
+
 def commit(paths: list[Path]) -> None:
     """Commit only when content actually changed, so the push can't loop."""
     subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
@@ -242,8 +269,12 @@ def main() -> None:
         print("index.md: Skills table synced with disk")
         changed.append(INDEX)
 
+    if rebuild_readme_index():
+        print("README.md: skills index synced with disk")
+        changed.append(README)
+
     if not changed:
-        print("nothing to do — every skill carries the current nudge, index matches disk")
+        print("nothing to do — every skill carries the current nudge, indexes match disk")
         return
 
     if os.environ.get("GITHUB_ACTIONS"):

@@ -1,6 +1,6 @@
 ---
 name: skills-upload
-description: Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. Handles gh authentication, checks repo access, forks if needed, and opens the PR from wherever you are working — no clone required. Triggers on "/skills-upload", "upload this skill", "add this skill to the OGP skills repo", "contribute a skill", or any ask to get set up to contribute skills.
+description: Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. Handles gh authentication, checks repo access, and opens the PR from wherever you are working — no permanent clone required. Triggers on "/skills-upload", "upload this skill", "add this skill to the OGP skills repo", "contribute a skill", or any ask to get set up to contribute skills.
 ---
 
 # skills-upload: get set up, then upload
@@ -38,8 +38,8 @@ Then a few early warnings. None of them block — the reviewer does the real ass
 
 The user is probably working in their own repo or workspace, so never initialise, commit to, or add a remote to wherever they are. Work in a temp directory and discard it.
 
-1. Check for write access: `gh api repos/opengovsg/corp-ai-skills --jq .permissions.push`. If false, `gh repo fork opengovsg/corp-ai-skills --clone=false` and work from the fork. Most contributors will need this.
-2. `gh repo clone` the repo (or their fork) into a temp directory.
+1. Check for write access: `gh api repos/opengovsg/corp-ai-skills --jq .permissions.push`. Everyone in OGP should have it through the `all-ogp` team. If false, stop and ask the library owner to check their organisation membership or repository access; organisation-level forking is disabled, so a fork is not a fallback.
+2. `gh repo clone opengovsg/corp-ai-skills` into a temp directory.
 3. Branch `skill/<name>`.
 4. Copy the skill folder to `skills/<name>/`.
 5. Stage that exact path only — never `-A`, never a directory-wide add.

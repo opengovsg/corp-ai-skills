@@ -34,5 +34,5 @@ Only judgement lives here. Mechanical work sits in GitHub Actions, which *can* f
 ## Known limitations
 
 - **Wakes on every PR** and self-filters on the first step. Cheap, but not free.
-- **Untested:** that the claude.ai PR trigger fires on PRs from forks. Most contributions will arrive that way, since org members have read access by default. Verify with a throwaway fork PR before relying on it.
+- The direct-branch PR path used by OGP contributors is verified. Organisation-level forking is disabled; if that policy changes, verify the trigger on a fork PR before relying on that path.
 - Same model family as the contributor's assistant, so shared blind spots. This is a filter, not a guarantee — the human is the gate, and the security rubric is not a substitute for reading a skill before running it.

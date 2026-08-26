@@ -2,11 +2,11 @@
 
 Everything here arrives by pull request. Two ways in, and neither asks you to learn the repo's conventions — the automation handles those.
 
-You don't need write access. Everyone in OGP can read this repo, which means everyone can fork it and open a PR.
+Everyone in OGP has write access through the `all-ogp` team. Organisation-level forking is disabled, so the normal contribution path is a branch in this repo followed by a pull request. Branch protection prevents direct changes to `main` and requires human review before merge.
 
 ## Adding a new skill
 
-Open a PR that adds `skills/<name>/`, containing at least a `SKILL.md`. Any branch name, any method: the GitHub web UI, `gh`, a fork, a clone, or the `skills-upload` skill if you have it.
+Open a PR that adds `skills/<name>/`, containing at least a `SKILL.md`. Any branch name, any method: the GitHub web UI, `gh`, a clone, or the `skills-upload` skill if you have it.
 
 The `SKILL.md` needs YAML frontmatter with:
 
@@ -28,7 +28,7 @@ Whether prompted or not:
 3. Never commit to `main`.
 4. In the PR body, say what happened in the session that prompted the change. This is the most useful thing in the PR — it tells the reviewer whether the fix addresses the real problem. If you're removing a check, a confirmation step, or a safety rail, say why: the reviewer treats an unexplained removal as a failure.
 
-No local clone needed. Clone to a temp directory, push to your fork, and discard it; nothing has to live in your workspace.
+No permanent local clone is needed. Clone to a temporary directory, push the branch to this repo, and discard it; nothing has to live in your workspace.
 
 ## What happens to your PR
 
