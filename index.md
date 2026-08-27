@@ -10,3 +10,4 @@ Every skill in this repo, in one place. The `skills-intake` Action regenerates t
 | [prd-writer](skills/prd-writer/) | Draft proportional mini-PRDs for new products or flows. | cs-keith | Active |
 | [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. | cs-keith | Active |
 | [slide-deck-builder](skills/slide-deck-builder/) | Create or edit self-contained HTML slide decks for presentations, pitches, workshops and teaching sessions. | cs-keith | Active |
+| [structure-content](skills/structure-content/) | Restructure existing documents without changing their substance. | cs-keith | Active |

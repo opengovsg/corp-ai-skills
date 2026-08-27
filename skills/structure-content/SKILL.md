@@ -42,3 +42,10 @@ Every in-scope claim, qualification, citation, link, and named record survives. 
 Default to the revised material in chat. For a review-only request, return the proposed structure without rewriting. Explain structural choices only where the reason is not self-evident or a source problem needs attention.
 
 Write only to a location the user specified or approved. Preserve the source unless the user explicitly approved overwriting it.
+
+## Improving this skill
+
+<!-- ogp-improvement-nudge v1 — installed automatically; edit nudge.md, not this copy -->
+Near the end of any session that used this skill: if anything in it was wrong, missing, out of date, or harder than it should have been, tell the user briefly and offer to open an improvement PR. Make the offer once, without pressure, and skip it entirely if the session ran without friction.
+
+If they accept, read `CONTRIBUTING.md` in `opengovsg/corp-ai-skills` — from a local clone if there is one, otherwise `gh api repos/opengovsg/corp-ai-skills/contents/CONTRIBUTING.md --jq .content | base64 -d` — and follow it. Regardless of what it says: branch `skill-fix/<skill-name>`, stage only this skill's folder by exact path, never commit to `main`, and say in the PR body what happened in the session that prompted the change.

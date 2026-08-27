@@ -17,6 +17,7 @@ This repo gives OGP colleagues one place to:
 | [prd-writer](skills/prd-writer/) | Draft proportional mini-PRDs for new products or flows. |
 | [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. |
 | [slide-deck-builder](skills/slide-deck-builder/) | Create or edit self-contained HTML slide decks for presentations, pitches, workshops and teaching sessions. |
+| [structure-content](skills/structure-content/) | Restructure existing documents without changing their substance. |
 <!-- skills-index:end -->
 
 [`index.md`](index.md) also records each skill's owner and status.
