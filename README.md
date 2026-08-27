@@ -10,17 +10,7 @@ This repo gives OGP colleagues one place to:
 
 ## Available skills
 
-<!-- skills-index:start -->
-| Skill | What it does |
-|---|---|
-| [draft-candidate-feedback](skills/draft-candidate-feedback/) | Draft concise, candidate-facing interview feedback for rejected candidates from pasted evaluation notes and evaluation sync notes. |
-| [prd-writer](skills/prd-writer/) | Draft proportional mini-PRDs for new products or flows. |
-| [skills-upload](skills/skills-upload/) | Get set up to contribute a skill to the OGP shared skills library (opengovsg/corp-ai-skills), then upload one. |
-| [slide-deck-builder](skills/slide-deck-builder/) | Create or edit self-contained HTML slide decks for presentations, pitches, workshops and teaching sessions. |
-| [structure-content](skills/structure-content/) | Restructure existing documents without changing their substance. |
-<!-- skills-index:end -->
-
-[`index.md`](index.md) also records each skill's owner and status.
+Refer to [`index.md`](index.md) for a record of each skill's owner and status.
 
 ## Install a skill
 
