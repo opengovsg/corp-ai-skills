@@ -1,0 +1,8 @@
+{
+  "name": "corp-ai-skills",
+  "description": "Every skill in OGP's shared skills library, kept in sync with main.",
+  "author": {
+    "name": "Open Government Products"
+  },
+  "repository": "https://github.com/opengovsg/corp-ai-skills"
+}
