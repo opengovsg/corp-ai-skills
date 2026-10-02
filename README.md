@@ -43,6 +43,17 @@ If Claude or the library owner tells you that an installed skill has an update r
 npx skills@latest update <skill-name> -g -y
 ```
 
+## Sync the whole library
+
+To get every skill and pick up new ones as they merge, add this repo as a plugin marketplace instead of installing skills one by one. In Claude Code:
+
+```text
+/plugin marketplace add opengovsg/corp-ai-skills
+/plugin install corp-ai-skills@corp-ai-skills
+```
+
+In the desktop app, add `opengovsg/corp-ai-skills` as a marketplace from the plugin settings, then install `corp-ai-skills`. Turn on auto-update for the marketplace to receive changes from `main` without reinstalling. Plugin skills are namespaced, for example `/corp-ai-skills:prd-writer`.
+
 ## Improve or contribute a skill
 
 Every user-facing skill carries an improvement nudge. If a session reveals something wrong, missing, out of date or awkward, Claude should offer to open an improvement pull request. Accept if the change is worthwhile; Claude will follow [`CONTRIBUTING.md`](CONTRIBUTING.md).

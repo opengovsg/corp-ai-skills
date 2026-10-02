@@ -1,0 +1,16 @@
+{
+  "name": "corp-ai-skills",
+  "owner": {
+    "name": "Open Government Products"
+  },
+  "metadata": {
+    "description": "OGP's shared Claude Code skills library."
+  },
+  "plugins": [
+    {
+      "name": "corp-ai-skills",
+      "source": "./",
+      "description": "Every skill in OGP's shared skills library, kept in sync with main."
+    }
+  ]
+}
